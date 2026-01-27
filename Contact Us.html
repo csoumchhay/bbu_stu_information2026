@@ -1,0 +1,420 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BBU | Contact Us Page</title>
+<link rel="icon" type="image/x-icon" href="bbu_icon.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* Reset & Base Styles */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body{
+  background:#f8faff;
+  color:#333;
+  line-height: 1.6;
+}
+
+/* ===== Header & Navbar ===== */
+header {
+  background: linear-gradient(50deg, #0a4cff, #0033cc);
+  color: white;
+  padding: 20px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-left img {
+  width: auto;
+  height: 90px;
+  border-radius: 10%;
+  background: white;
+  padding: 5px;
+}
+
+.header-left h1 {
+  font-size: 25px;
+  font-family: 'Arial Black';
+  line-height: 1.2;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffcc00;
+  transform: translateY(-5px);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  min-width: 150px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  display: block;
+  font-size: 14px;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  color: #0a4cff;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 20px;
+  padding: 5px 15px;
+  margin-left: 10px;
+}
+.search-container input { border: none; outline: none; padding: 5px; font-size: 14px; }
+.search-container button { background: none; border: none; cursor: pointer; color: #0a4cff; font-weight: bold; }
+
+/* Banner */
+.contact-banner {
+  height: 40vh;
+  background: linear-gradient(rgba(0, 51, 204, 0.80), rgba(0, 51, 204, 0.80)),  
+              url("https://bbu-webiste-space.sgp1.cdn.digitaloceanspaces.com/campus/bmc/logo/20250315063828_92cfb66428282d4a5575da3efa57cd3e69b140e478e53d3ef20b768851c0412c.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.contact-banner h2 { font-size: 40px; margin-bottom: 10px; }
+
+/* Content Wrapper */
+.contact-wrapper {
+  max-width: 1100px;
+  margin: -60px auto 60px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 30px;
+}
+
+/* Sidebar Info */
+.contact-sidebar {
+  background: #0033cc;
+  color: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  animation: fadeUp 0.8s ease;
+}
+
+.contact-sidebar h3 { font-size: 24px; margin-bottom: 20px; border-bottom: 2px solid #ffcc00; display: inline-block; padding-bottom: 5px;}
+
+.contact-method {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.icon-box {
+  background: rgba(255,255,255,0.2);
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 20px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Social Buttons */
+.social-links {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.social-btn i { font-size: 20px; }
+.fb-btn { background: #1877F2; }
+.tg-btn { background: #0088cc; }
+
+.social-btn:hover {
+  transform: translateY(-5px);
+  filter: brightness(1.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Main Form Area */
+.contact-main {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  animation: fadeUp 1s ease;
+}
+
+.contact-main h3 { color: #0033cc; margin-bottom: 25px; font-size: 26px; }
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.input-group { margin-bottom: 20px; }
+.input-group.full-width { grid-column: span 2; }
+.input-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #555; }
+.input-group input, .input-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+}
+
+.btn-submit {
+  background: #0a4cff;
+  color: white;
+  border: none;
+  padding: 15px 35px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-submit:hover {
+  background: #ffcc00;
+  color: #0033cc;
+  transform: translateY(-3px);
+}
+
+@keyframes fadeUp{
+  from{ opacity:0; transform:translateY(30px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+
+footer{
+  background:#0a4cff;
+  color:white;
+  text-align:center;
+  padding:20px;
+  font-size:14px;
+}
+
+@media (max-width: 900px) {
+  .contact-wrapper { grid-template-columns: 1fr; margin-top: 20px;}
+  .form-grid { grid-template-columns: 1fr; }
+  .input-group.full-width { grid-column: span 1; }
+  header { flex-direction: column; gap: 15px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-left">
+    <img src="bbu_logo.jpg" alt="Logo">
+    <h1>Build Bright University<br>
+      <span style="font-family:'Khmer Muol'; font-size: 20px; padding-top: 10px; display: block;">សាកលវិទ្យាល័យបៀលប្រាយ</span>
+    </h1>
+  </div>
+
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="About Us.html">About Us</a></li>
+      <li><a href="#" style="color: #ffcc00;">Contact Us</a></li>
+      <li class="dropdown">
+        <a href="#">More ▾</a>
+        <div class="dropdown-content">
+          <a href="#">Courses</a>
+          <a href="#">E-Learning</a>
+          <a href="#">Library</a>
+        </div>
+      </li>
+    </ul>
+
+    <div class="search-container">
+      <input type="text" placeholder="Search...">
+      <button style="background:none; border:none; cursor:pointer;">🔍</button>
+    </div>
+  </nav>
+</header>
+
+<section class="contact-banner">
+  <h2>Contact Us</h2>
+  <p>We are here to help and answer any questions you might have.</p>
+</section>
+
+<div class="contact-wrapper">
+  <aside class="contact-sidebar">
+    <h3>Contact Info</h3>
+    
+    <div class="contact-method">
+      <div class="icon-box">📍</div>
+      <div class="method-text">
+        <h4>Our Campus</h4>
+        <p>Banteay Meanchey Main Campus,<br>Cambodia</p>
+      </div>
+    </div>
+
+    <div class="contact-method">
+      <div class="icon-box">📞</div>
+      <div class="method-text">
+        <h4>Call Us</h4>
+        <p>+855 96 439 5113</p>
+      </div>
+    </div>
+
+    <div class="contact-method">
+      <div class="icon-box">📧</div>
+      <div class="method-text">
+        <h4>Email Support</h4>
+        <p>info@bbu.edu.kh</p>
+      </div>
+    </div>
+
+    <div class="social-links">
+      <h4>Connect with me:</h4>
+      <a href="https://www.facebook.com/chhoum.sumchhay/" target="_blank" class="social-btn fb-btn">
+        <i class="fab fa-facebook-f"></i> Facebook
+      </a>
+      <a href="https://t.me/chhoumsumchhay" target="_blank" class="social-btn tg-btn">
+        <i class="fab fa-telegram-plane"></i> Telegram
+      </a>
+    </div>
+  </aside>
+
+  <main class="contact-main">
+    <h3>Send us a Message</h3>
+    <form id="contactForm">
+      <div class="form-grid">
+        <div class="input-group">
+          <label>First Name</label>
+          <input type="text" id="firstName" placeholder="Your first name" required>
+        </div>
+        <div class="input-group">
+          <label>Last Name</label>
+          <input type="text" id="lastName" placeholder="Your last name" required>
+        </div>
+        <div class="input-group full-width">
+          <label>Email Address</label>
+          <input type="email" id="email" placeholder="example@mail.com" required>
+        </div>
+        <div class="input-group full-width">
+          <label>Message</label>
+          <textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn-submit">Submit Message</button>
+    </form>
+  </main>
+</div>
+
+<footer>
+  © 2026 BBU | Build Bright University - Contact Us Page @Chhay
+</footer>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent page refresh
+
+    // Create message object
+    const newMsg = {
+      name: document.getElementById('firstName').value + " " + document.getElementById('lastName').value,
+      email: document.getElementById('email').value,
+      message: document.getElementById('message').value,
+      date: new Date().toLocaleString()
+    };
+
+    // Get existing messages or start new array
+    let messages = JSON.parse(localStorage.getItem('bbu_messages')) || [];
+    
+    // Add new message
+    messages.push(newMsg);
+
+    // Save back to local storage
+    localStorage.setItem('bbu_messages', JSON.stringify(messages));
+
+    // Feedback
+    alert('Message successfully submitted! You can view it on the Admin page.');
+    this.reset();
+  });
+</script>
+
+</body>
+</html>
