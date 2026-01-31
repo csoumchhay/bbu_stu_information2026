@@ -19,12 +19,13 @@ body{
   color:#222;
 }
 
+/* ===== Header & Navbar ===== */
 header {
   background: linear-gradient(50deg, #0a4cff, #0033cc);
   color: white;
   padding: 20px 20px;
   display: flex;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -52,13 +53,7 @@ header {
   font-family: 'Arial Black';
   line-height: 1.2;
 }
-.line {
-  border: none;
-  height: 2px;
-  background-color: #ffcc00;
-  width: 80%;
-  margin: 15px auto;
-}
+
 nav {
   display: flex;
   align-items: center;
@@ -86,10 +81,9 @@ nav {
 
 .nav-links a:hover {
   color: #ffcc00;
-  transform: translateY(-5px); 
+  transform: translateY(-5px);
 }
 
-/* Dropdown Menu CSS */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -119,7 +113,6 @@ nav {
   display: block;
 }
 
-/* Search Bar */
 .search-container {
   display: flex;
   align-items: center;
@@ -128,21 +121,9 @@ nav {
   padding: 5px 15px;
   margin-left: 10px;
 }
+.search-container input { border: none; outline: none; padding: 5px; font-size: 14px; }
+.search-container button { background: none; border: none; cursor: pointer; color: #0a4cff; font-weight: bold; }
 
-.search-container input {
-  border: none;
-  outline: none;
-  padding: 5px;
-  font-size: 14px;
-}
-
-.search-container button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #0a4cff;
-  font-weight: bold;
-}
 
 /* ===== Hero Section ===== */
 .hero{
@@ -234,7 +215,6 @@ footer{
       <span style="font-family:'Khmer Muol'; font-size: 20px; padding-top: 10px; display: block;">សាកលវិទ្យាល័យបៀលប្រាយ</span>
     </h1>
   </div>
-
   <nav>
     <ul class="nav-links">
       <li><a href="#" style="color: #ffcc00;">Home</a></li>
@@ -269,6 +249,7 @@ footer{
       <p><strong>Room:</strong> <span>404</span></p>
       <p><strong>Tel:</strong> <span>096 439 5113</span></p>
       <p><strong>Major:</strong> <span>Information Technology(I.T)</span></p>
+      <p><Strong>Major:</strong> <span>Information Technology</span></p>
       <p><strong>Year:</strong> <span>2</span></p>
       <p><strong>Semester:</strong> <span>2</span></p>
     </div>
